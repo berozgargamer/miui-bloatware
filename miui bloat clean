@@ -1,0 +1,54 @@
+@echo off
+set /p Y=Enter adb.exe folder path:    
+cd /d %Y%
+adb devices
+pause
+for %%X in (
+"com.amazon.appmanager"
+"com.android.browser"
+"com.android.email"
+"com.android.wallpaper.livepicker"
+"com.facebook.services"
+"com.facebook.system"
+"com.facebook.appmanager"
+
+"com.mfashiongallery.emag"
+"com.mi.android.globalpersonalassistant"
+"com.mi.dlabs.vr"
+"com.mi.globalTrendNews"
+"com.mi.global.bbs"
+"com.mi.global.shop"
+"com.micredit.in"
+"com.milink.service"
+"com.mipay.wallet.id"
+"com.mipay.wallet.in"
+"com.miui.analytics"
+"com.miui.android.fashiongallery"
+"com.miui.miwallpaper"
+"com.miui.msa.global"
+"com.miui.screenrecorder"
+"com.miui.translationservice"
+"com.miui.translation.kingsoft"
+"com.miui.translation.xmcloud"
+"com.miui.translation.youdao"
+"com.miui.videoplayer"
+"com.miui.weather2"
+"com.netflix.partner.activation"
+
+"com.swiftkey.languageprovider"
+"com.swiftkey.swiftkeyconfigurator"
+"com.xiaomi.account"
+"com.xiaomi.discover"
+"com.xiaomi.glgm"
+"com.xiaomi.joyose"
+"com.xiaomi.location.fused"
+"com.xiaomi.mipicks"
+"com.xiaomi.miplay_client"
+"com.xiaomi.mirecycle"
+"com.xiaomi.oversea.ecom"
+"com.xiaomi.payment"
+"com.xiaomi.providers.appindex"
+"com.xiaomi.xmsf" ) do (
+    adb shell pm uninstall %%X
+    adb shell pm uninstall --user 0 %%X
+)
